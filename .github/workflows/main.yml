@@ -1,0 +1,14 @@
+name: Main
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  Test:
+    runs-on: macos-latest
+    steps:
+      - uses: fwal/setup-swift@v1
+        with: { swift-version: "3.1.0" }
+      - run: swift --version # Swift 5.1.0
+      - run: swift test
